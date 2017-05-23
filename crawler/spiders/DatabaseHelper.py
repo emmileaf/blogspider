@@ -6,13 +6,13 @@ class DatabaseHelper:
     conn = sqlite3.connect('blogs.db')
     c = conn.cursor()
     
-    #create wppages table with Id, Netloc, Url, and Backlinks columns
+    #create wppages table with Id, Backlinks, Netloc, and Url columns
     c.execute(
     "CREATE TABLE IF NOT EXISTS wppages (\
     Id INTEGER PRIMARY KEY AUTOINCREMENT, Backlinks INTEGER, \
     Netloc TEXT UNIQUE NOT NULL, Url TEXT UNIQUE NOT NULL);")
     
-	  #create bloghome table with Id, Netloc, Title, Last_Active, and Backlinks columns
+	  #create bloghome table with Id, Backlinks, Netloc, Title, and Last_Active columns
     c.execute(
     "CREATE TABLE IF NOT EXISTS bloghome (\
     Id INTEGER PRIMARY KEY AUTOINCREMENT, Backlinks INTEGER, \

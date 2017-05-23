@@ -11,8 +11,7 @@ class BlogSpider(CrawlSpider):
     """ a spider for crawling through pages given starting url"""
 	
     name = "blogspider"
-    #start_urls = ["https://wordpress.com/"]
-    start_urls = ["https://moviemermaid.wordpress.com/"]
+    start_urls = ["https://wordpress.com/"]
     rules = (
         # call parse_link on all links from starting url
         Rule(LinkExtractor(), callback='parse_link', follow=True),)
@@ -52,7 +51,7 @@ class BlogSpider(CrawlSpider):
         unique = False
         wpfound = 0
         for href in response.css('link::attr(href)'):
-            print type(href)
+            # for debugging: print type(href)
             wpmatch = re.search('wp', str(href))
             if wpmatch:
                 wpfound += 1
