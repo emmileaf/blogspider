@@ -1,7 +1,6 @@
 led / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
 
 # rough work, debugging, tests
 roughwork/*
